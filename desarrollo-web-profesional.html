@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web Profesional — Paquetes de Diseño Web</title>
+    <meta name="description"
+        content="Planes y paquetes profesionales de diseño y desarrollo web de Richard Endara: Landing Pages, Web Corporativa y Tienda Virtual (E-commerce) en modo oscuro premium." />
+    <link rel="canonical" href="https://richardendara.netlify.app/desarrollo-web-profesional" />
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        })();
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            background-color: #0a0a0a;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #888;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.08);
+            transform: scale(1.05);
+        }
+
+        .theme-toggle .sun-icon {
+            display: block;
+        }
+
+        .theme-toggle .moon-icon {
+            display: none;
+        }
+
+        body.light-mode .theme-toggle .sun-icon {
+            display: none;
+        }
+
+        body.light-mode .theme-toggle .moon-icon {
+            display: block;
+        }
+
+        /* Hero Section */
+        .pricing-hero {
+            padding: 140px 0 40px;
+            text-align: center;
+        }
+
+        .pricing-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pricing-hero p {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding-bottom: 80px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        /* Card styles */
+        .card {
+            background-color: #121212;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.03);
+        }
+
+        /* Highlighted middle card (Recomendado) */
+        .card.card-highlighted {
+            border: 2px solid #5c4cee;
+            box-shadow: 0 10px 30px rgba(92, 76, 238, 0.1);
+        }
+
+        .card.card-highlighted:hover {
+            box-shadow: 0 20px 40px rgba(92, 76, 238, 0.2);
+        }
+
+        /* Badges */
+        .badge-container {
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .badge-default {
+            background-color: #1e1e1e;
+            color: #a3a3a3;
+        }
+
+        .badge-popular {
+            background-color: #5c4cee;
+            color: #ffffff;
+        }
+
+        .badge-ecommerce {
+            background-color: #db2777;
+            color: #ffffff;
+        }
+
+        /* Headings inside cards */
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 25px;
+            min-height: 48px;
+        }
+
+        /* Price block */
+        .price-box {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 30px;
+        }
+
+        .price-amount {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .price-currency {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .price-iva {
+            font-size: 0.95rem;
+            color: #666;
+            margin-left: 8px;
+            font-weight: bold;
+        }
+
+        /* Separator line */
+        .divider {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.08);
+            margin-bottom: 30px;
+        }
+
+        /* Features List */
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+            flex-grow: 1;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+            line-height: 1.45;
+            color: #888;
+        }
+
+        .feature-item svg {
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .feature-item strong {
+            color: #ffffff;
+            font-weight: 600;
+            display: inline;
+        }
+
+        /* Gift box section */
+        .gift-box {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 30px;
+        }
+
+        .gift-box-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .card-1 .gift-box-title {
+            color: #a3a3a3;
+        }
+
+        .card-2 .gift-box-title {
+            color: #818cf8;
+        }
+
+        .card-3 .gift-box-title {
+            color: #f472b6;
+        }
+
+        .gift-box-desc {
+            font-size: 0.85rem;
+            color: #a3a3a3;
+            line-height: 1.4;
+        }
+
+        .gift-box-desc strong {
+            color: #ffffff;
+        }
+
+        /* CTA buttons */
+        .btn-cta {
+            display: block;
+            width: 100%;
+            padding: 16px 0;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-cta:active {
+            transform: scale(0.98);
+        }
+
+        .btn-card-1 {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-card-1:hover {
+            background-color: #262626;
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .btn-card-2 {
+            background-color: #5c4cee;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(92, 76, 238, 0.3);
+        }
+
+        .btn-card-2:hover {
+            background-color: #4b3be3;
+            box-shadow: 0 6px 20px rgba(92, 76, 238, 0.45);
+        }
+
+        .btn-card-3 {
+            background-color: #db2777;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(219, 39, 119, 0.3);
+        }
+
+        .btn-card-3:hover {
+            background-color: #be185d;
+            box-shadow: 0 6px 20px rgba(219, 39, 119, 0.45);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px;
+            color: #888;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .card.card-highlighted {
+                grid-column: span 2;
+                max-width: 600px;
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            nav {
+                justify-content: space-between;
+            }
+
+            .pricing-hero h1 {
+                font-size: 2rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .card.card-highlighted {
+                grid-column: span 1;
+            }
+        }
+
+        /* Light Mode Styles for Pricing Page */
+        body.light-mode {
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+        }
+        
+        body.light-mode header {
+            background-color: #f5f5f7;
+        }
+        
+        body.light-mode .logo {
+            color: #1d1d1f;
+        }
+        
+        body.light-mode .nav-links a {
+            color: #666;
+        }
+        
+        body.light-mode .nav-links a:hover {
+            color: #1d1d1f;
+        }
+        
+        body.light-mode .theme-toggle {
+            color: #666;
+        }
+        
+        body.light-mode .theme-toggle:hover {
+            color: #1d1d1f;
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        
+        body.light-mode .pricing-hero h1 {
+            background: linear-gradient(135deg, #1d1d1f, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        body.light-mode .pricing-hero p {
+            color: #666;
+        }
+        
+        body.light-mode .card {
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+        
+        body.light-mode .card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        }
+        
+        body.light-mode .card.card-highlighted {
+            border: 2px solid #5c4cee;
+            box-shadow: 0 10px 30px rgba(92, 76, 238, 0.08);
+        }
+        
+        body.light-mode .card.card-highlighted:hover {
+            box-shadow: 0 20px 40px rgba(92, 76, 238, 0.15);
+        }
+        
+        body.light-mode .card-title {
+            color: #1d1d1f;
+        }
+        
+        body.light-mode .card-description {
+            color: #666;
+        }
+        
+        body.light-mode .price-amount,
+        body.light-mode .price-currency {
+            color: #1d1d1f;
+        }
+        
+        body.light-mode .price-iva {
+            color: #888;
+        }
+        
+        body.light-mode .divider {
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+        
+        body.light-mode .feature-item {
+            color: #555;
+        }
+        
+        body.light-mode .feature-item strong {
+            color: #1d1d1f;
+        }
+        
+        body.light-mode .gift-box {
+            background-color: rgba(0, 0, 0, 0.02);
+            border: 1px dashed rgba(0, 0, 0, 0.15);
+        }
+        
+        body.light-mode .gift-box-desc {
+            color: #555;
+        }
+        
+        body.light-mode .gift-box-desc strong {
+            color: #1d1d1f;
+        }
+        
+        body.light-mode .btn-card-1 {
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+        
+        body.light-mode .btn-card-1:hover {
+            background-color: #e4e4e7;
+            border-color: rgba(0, 0, 0, 0.25);
+        }
+        
+        body.light-mode footer {
+            color: #888;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        body.light-mode footer a {
+            color: #666;
+        }
+        
+        body.light-mode footer a:hover {
+            color: #1d1d1f;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <a href="https://richardendara.netlify.app/" class="logo">RICHARD ENDARA</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="https://richardendara.netlify.app/#trabajo">TRABAJO</a></li>
+                    <li><a href="https://richardendara.netlify.app/#acerca">ACERCA</a></li>
+                    <li><a href="https://richardendara.netlify.app/#contacto">CONTACTO</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo de color">
+                    <!-- Sun Icon (visible in dark mode) -->
+                    <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.72" x2="5.64" y2="18.3"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon (visible in light mode) -->
+                    <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="pricing-hero">
+            <h1>PAQUETES DE DESARROLLO WEB</h1>
+            <p>Elige el plan ideal para impulsar la presencia digital de tu negocio con soluciones optimizadas, rápidas
+                y autogestionables.</p>
+        </section>
+
+        <section class="pricing-section">
+            <div class="pricing-grid">
+                <!-- Tarjeta 1: Landing Page / One Page -->
+                <div class="card card-1">
+                    <div class="badge-container">
+                        <span class="badge badge-default">Landing Page</span>
+                    </div>
+                    <h2 class="card-title">One Page</h2>
+                    <p class="card-description">Ideal para marcas, campañas específicas o negocios que buscan una
+                        presentación directa y efectiva.</p>
+
+                    <div class="price-box">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">397</span>
+                        <span class="price-iva">(+ IVA)</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <ul class="features-list">
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Navegación Vertical Fluida:</strong> Menú con navegación por desplazamientos
+                                (hasta 4 secciones principales).</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Diseño Adaptativo (Responsive):</strong> Experiencia optimizada para
+                                dispositivos móviles y tablets.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Catálogo de Productos / Servicios:</strong> Presentación clara y
+                                estructurada.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Galería Multimedia:</strong> Exhibición de imágenes de alta resolución y video
+                                corporativo.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Geolocalización:</strong> Mapa de ubicación interactivo de Google Maps.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Captación de Clientes:</strong> Formulario de contacto y consulta
+                                directa.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Atención en Vivo:</strong> Botón de contacto directo a WhatsApp
+                                Business.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Soporte Técnico:</strong> Garantía, mantenimiento y actualizaciones
+                                iniciales.</span>
+                        </li>
+                    </ul>
+
+                    <div class="gift-box">
+                        <div class="gift-box-title">+ Ultra Rápido</div>
+                        <div class="gift-box-desc"><strong>Pagina web HTML optimizada:</strong> Optimización para una
+                            carga
+                            ultrarrápida, desde 1 hasta 3 segundos.</div>
+                    </div>
+
+                    <a href="https://wa.me/593983599700?text=Hola%20Richard%2C%20estoy%20interesado%20en%20el%20plan%20One%20Page%20(%24397%20%2B%20IVA)"
+                        target="_blank" class="btn-cta btn-card-1">Seleccionar Plan</a>
+                </div>
+
+                <!-- Tarjeta 2: Web Corporativa / Informativa (Destacado) -->
+                <div class="card card-2 card-highlighted">
+                    <div class="badge-container">
+                        <span class="badge badge-popular">Más Popular</span>
+                    </div>
+                    <h2 class="card-title">Web Corporativa</h2>
+                    <p class="card-description">Diseñada para empresas y profesionales que necesitan estructurar sus
+                        servicios y generar confianza.</p>
+
+                    <div class="price-box">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">497</span>
+                        <span class="price-iva">(+ IVA)</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <ul class="features-list">
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Estructura Multi-página:</strong> Menú principal con 4 páginas
+                                individuales/independientes.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Navegación Categorizada:</strong> Submenús estructurados para categorías y
+                                subcategorías.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Diseño UX/UI Avanzado:</strong> Adaptado a móviles con enfoque en usabilidad y
+                                velocidad.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Portafolio Ilimitado:</strong> Presentación detallada de servicios o catálogo
+                                comercial.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Galería Interactiva:</strong> Galería multimedia para productos, servicios o
+                                proyectos.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Ubicación Estratégica:</strong> Mapa interactivo de Google Maps.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Formulario de Contacto:</strong> Notificaciones instantáneas para seguimiento
+                                de prospectos.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Canal Directo:</strong> Botón de chat en vivo con WhatsApp Business.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Mantenimiento Técnico:</strong> Acompañamiento y soporte
+                                post-lanzamiento el primer mes.</span>
+                        </li>
+                    </ul>
+
+                    <div class="gift-box">
+                        <div class="gift-box-title">+ Incluye</div>
+                        <div class="gift-box-desc"><strong>Workshop de Autogestión:</strong> Entrenamiento personalizado
+                            para gestionar y subir contenidos fácilmente.</div>
+                    </div>
+
+                    <a href="https://wa.me/593983599700?text=Hola%20Richard%2C%20estoy%20interesado%20en%20el%20plan%20Web%20Corporativa%20(%24497%20%2B%20IVA)"
+                        target="_blank" class="btn-cta btn-card-2">Seleccionar Plan</a>
+                </div>
+
+                <!-- Tarjeta 3: Tienda Virtual (E-Commerce) -->
+                <div class="card card-3">
+                    <div class="badge-container">
+                        <span class="badge badge-ecommerce">E-Commerce</span>
+                    </div>
+                    <h2 class="card-title">Tienda Virtual</h2>
+                    <p class="card-description">Plataforma de comercio electrónico diseñada para vender 24/7 y
+                        automatizar cobros.</p>
+
+                    <div class="price-box">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">797</span>
+                        <span class="price-iva">(+ IVA)</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <ul class="features-list">
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Estructura E-Commerce:</strong> 4 páginas principales + Carrito de compras y
+                                Checkout interactivo.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Organización Comercial:</strong> Submenús estructurados por categorías y
+                                filtros de productos.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Pasarela de Pagos Segura:</strong> Integración para cobro con tarjeta de
+                                crédito/débito vía PayPhone o PayPal.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Gestión de Inventario:</strong> Carga de productos con variaciones
+                                (talla, color, modelo).</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Diseño "Mobile-First":</strong> Optimizado para facilitar el proceso de compra
+                                desde smartphones.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Galería Comercial:</strong> Fotografías, demostraciones en video y ficha
+                                técnica por producto.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Atención y Venta Directa:</strong> Integración con WhatsApp +
+                                Formulario de contacto.</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Cobertura y Envíos:</strong> Mapa interactivo de ubicación o cobertura de
+                                entregas.</span>
+                        </li>
+                    </ul>
+
+                    <div class="gift-box">
+                        <div class="gift-box-title">+ Incluye</div>
+                        <div class="gift-box-desc"><strong>Workshop de Gestión:</strong> Capacitación paso a
+                            paso para administrar inventario, pedidos y ventas.</div>
+                    </div>
+
+                    <a href="https://wa.me/593983599700?text=Hola%20Richard%2C%20estoy%20interesado%20en%20el%20plan%20Tienda%20Virtual%20(%24647%20%2B%20IVA)"
+                        target="_blank" class="btn-cta btn-card-3">Seleccionar Plan</a>
+                </div>
+            </div>
+        </section>
+
+        <footer role="contentinfo">
+            © <span id="year"></span> richardendara.netlify.app — Diseño y desarrollo. <br>
+            <a href="/politica-seguridad-informacion">Política de Seguridad de la Información</a> • <a
+                href="/aviso-legal">Aviso legal</a> • <a href="/politica-privacidad">Política de privacidad</a>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Add scroll effect to header
+        function updateHeaderStyle() {
+            const header = document.querySelector('header');
+            if (!header) return;
+            const isLight = document.body.classList.contains('light-mode');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = isLight ? 'rgba(245, 245, 247, 0.95)' : 'rgba(10, 10, 10, 0.95)';
+            } else {
+                header.style.backgroundColor = isLight ? '#f5f5f7' : '#0a0a0a';
+            }
+        }
+        
+        window.addEventListener('scroll', updateHeaderStyle);
+
+        // Theme toggle logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('theme-toggle');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    const isLight = document.body.classList.toggle('light-mode');
+                    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+                    updateHeaderStyle();
+                });
+            }
+            // Initial call to set header background on load
+            updateHeaderStyle();
+        });
+    </script>
+</body>
+
+</html>
